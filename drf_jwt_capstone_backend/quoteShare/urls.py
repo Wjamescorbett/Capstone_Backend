@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.CarList.as_view()),
     path('all/', views.get_all_cars),
     path('post/', views.user_cars),
-    path('postedQuote/', views.postedQuotes)
+    path('postedQuote/', views.postedQuotes),
+    path('postedComment/', views.postedComment)
 ]

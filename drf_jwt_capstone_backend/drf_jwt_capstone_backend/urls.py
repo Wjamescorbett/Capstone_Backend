@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),
     path('api/cars/', include('quoteShare.urls')),
-    path('api/postedQuote/', include('quoteShare.urls'))
+    path('api/postedQuote/', include('quoteShare.urls')),
+    path('api/postedComment/', include('quoteShare.urls'))
 ]
