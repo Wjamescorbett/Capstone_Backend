@@ -9,3 +9,10 @@ class Car(models.Model):
     make = models.CharField(max_length=30)
     model = models.CharField(max_length=100)
     year = models.IntegerField()
+
+class PostedQuote(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quoteText = models.CharField(max_length=500)
+    author = models.CharField(max_length=100)
+    keyWord = models.CharField(max_length=20)
+    comments = models.CharField(max_length=500)
