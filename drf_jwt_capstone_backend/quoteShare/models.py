@@ -20,3 +20,4 @@ class PostedQuote(models.Model):
 class PostedComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     commentText = models.CharField(max_length=500)
+
