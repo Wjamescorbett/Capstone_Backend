@@ -72,3 +72,17 @@ def postedComment(request):
         comments = PostedComment.objects.filter(user_id=request.user.id)
         serializer = PostedCommentSerializer(comments, many=True)
         return Response(serializer.data)
+
+@api_view(['POST', 'GET'])
+@permission_classes([IsAuthenticated])
+def userFavorite(request):
+    if request.method == 'POST':
+        serializer = UserFavoriteSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response (serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'GET':
+        favoriteQuote = UserFavorite.objects.filter(user_id=request.user.id)
+        serializer = UserFavoriteSerializer(comments, many=True)
+        return Response(serializer.data)

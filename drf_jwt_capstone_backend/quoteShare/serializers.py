@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Car, PostedComment, PostedQuote
+from .models import Car, PostedComment, PostedQuote, UserFavorite
 
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,3 +15,7 @@ class PostedCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = PostedComment
         fields = ['id', 'commentText', 'user_id']
+
+class UserFavoriteSerializer(serializers.ModelSerializer):
+    model = UserFavorite
+    fields = ['id', 'postedQuote', 'user_id']
