@@ -9,7 +9,7 @@ class CarSerializer(serializers.ModelSerializer):
 class PostedQuoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = PostedQuote
-        fields = ['id', 'quoteText', 'author', 'keyWord', 'comments', 'user_id']
+        fields = ['id', 'quoteText', 'author', 'keyWord', 'comments', 'user']
 
 class PostedCommentSerializer(serializers.ModelSerializer):
     class Meta:
