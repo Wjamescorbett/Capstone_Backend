@@ -73,6 +73,24 @@ def postedComment(request):
         serializer = PostedCommentSerializer(comments, many=True)
         return Response(serializer.data)
 
+
+
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_all_postedQuotes(request):
+    quotes = PostedQuote.objects.all()
+    serializer = PostedQuoteSerializer(quotes, many=True)
+    return Response(serializer.data)
+
+
+
+
+
+
+
+
 @api_view(['POST', 'GET'])
 @permission_classes([IsAuthenticated])
 def userFavorite(request):
