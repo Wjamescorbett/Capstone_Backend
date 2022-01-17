@@ -45,7 +45,7 @@ def user_cars(request):
         serializer = CarSerializer(cars, many=True)
         return Response(serializer.data)
 
-@api_view(['POST', 'GET'])
+@api_view(['POST', 'GET', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def postedQuotes(request):
     if request.method == 'POST':
@@ -58,11 +58,16 @@ def postedQuotes(request):
         quotes = PostedQuote.objects.filter(user_id=request.user.id)
         serializer = PostedQuoteSerializer(quotes, many=True)
         return Response(serializer.data)
+    # elif request.method == "DELETE":
+    #     serializer = PostedQuoteSerializer(data=request.data)
+    #     if serializer.is_valid():    
+    #         record = PostedQuote.objects.get()
+    #         record.delete()
+    #         print("Record deleted successfully!")
 
 
 
-
-@api_view(['POST', 'GET'])
+@api_view(['POST', 'GET', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def postedComment(request):
     if request.method == 'POST':
@@ -75,6 +80,9 @@ def postedComment(request):
         comments = PostedComment.objects.filter(user_id=request.user.id)
         serializer = PostedCommentSerializer(comments, many=True)
         return Response(serializer.data)
+    # elif request.method == "DELETE":
+    #     PostedQuote.objects.filter(id=id).delete()
+    #     return Response("Comment Deleted")
 
 
 
