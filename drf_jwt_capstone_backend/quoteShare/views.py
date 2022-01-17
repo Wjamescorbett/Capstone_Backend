@@ -89,6 +89,13 @@ def get_all_postedQuotes(request):
 
 
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_all_postedComments(request):
+    comments = PostedComment.objects.all()
+    serializer = PostedCommentSerializer(comments, many=True)
+    return Response(serializer.data)
+
 
 
 

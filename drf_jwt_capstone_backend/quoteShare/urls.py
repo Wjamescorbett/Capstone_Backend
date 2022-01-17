@@ -7,5 +7,6 @@ urlpatterns = [
     path('post/', views.user_cars),
     path('postedQuote/', views.postedQuotes),
     path('postedComment/', views.postedComment),
-    path('allQuotes/', views.get_all_postedQuotes)
+    path('allQuotes/', views.get_all_postedQuotes),
+    path('allComments/', views.get_all_postedComments)
 ]
