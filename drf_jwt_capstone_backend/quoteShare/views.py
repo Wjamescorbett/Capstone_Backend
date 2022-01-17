@@ -59,6 +59,9 @@ def postedQuotes(request):
         serializer = PostedQuoteSerializer(quotes, many=True)
         return Response(serializer.data)
 
+
+
+
 @api_view(['POST', 'GET'])
 @permission_classes([IsAuthenticated])
 def postedComment(request):

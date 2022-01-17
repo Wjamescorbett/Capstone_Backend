@@ -14,7 +14,7 @@ class PostedQuoteSerializer(serializers.ModelSerializer):
 class PostedCommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = PostedComment
-        fields = ['id', 'commentText', 'user_id']
+        fields = ['id', 'postedQuote', 'commentText', 'user']
 
 class UserFavoriteSerializer(serializers.ModelSerializer):
     model = UserFavorite
