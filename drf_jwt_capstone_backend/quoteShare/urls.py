@@ -8,5 +8,8 @@ urlpatterns = [
     path('postedQuote/', views.postedQuotes),
     path('postedComment/', views.postedComment),
     path('allQuotes/', views.get_all_postedQuotes),
-    path('allComments/', views.get_all_postedComments)
+    path('allComments/', views.get_all_postedComments),
+    path('apiComment/', views.apiComment),
+    path('allApiComments/', views.get_all_apiComments),
+    # path('allComments/<str:id>/', views.get_all_postedComments)
 ]

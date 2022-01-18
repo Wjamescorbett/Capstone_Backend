@@ -22,5 +22,6 @@ urlpatterns = [
     path('api/cars/', include('quoteShare.urls')),
     path('api/postedQuote/', include('quoteShare.urls')),
     path('api/postedComment/', include('quoteShare.urls')),
-    path('api/Comments/', include('quoteShare.urls'))
+    path('api/Comments/', include('quoteShare.urls')),
+    path('api/apiComments/', include('quoteShare.urls'))
 ]

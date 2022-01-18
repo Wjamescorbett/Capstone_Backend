@@ -22,7 +22,10 @@ class PostedComment(models.Model):
     postedQuote = models.ForeignKey(PostedQuote, on_delete=models.CASCADE)
     commentText = models.CharField(max_length=500)
 
-
+class ApiComment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    apiQuote = models.CharField(max_length=500)
+    commentText = models.CharField(max_length=500)
 
 
 
