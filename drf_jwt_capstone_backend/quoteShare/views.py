@@ -140,3 +140,25 @@ def userFavorite(request):
         favoriteQuote = UserFavorite.objects.filter(user_id=request.user.id)
         serializer = UserFavoriteSerializer(comments, many=True)
         return Response(serializer.data)
+
+
+
+
+# DELETE
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def deleteComment(request, pk):
+    if request.method == 'DELETE':
+        snippet = PostedComment.objects.get(pk=pk)
+        snippet.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def deleteQuote(request, pk):
+    if request.method == 'DELETE':
+        snippet = PostedQuote.objects.get(pk=pk)
+        snippet.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

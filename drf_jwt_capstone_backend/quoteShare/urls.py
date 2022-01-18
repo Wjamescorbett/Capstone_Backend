@@ -11,5 +11,7 @@ urlpatterns = [
     path('allComments/', views.get_all_postedComments),
     path('apiComment/', views.apiComment),
     path('allApiComments/', views.get_all_apiComments),
+    path('deleteQuote/<int:pk>/', views.deleteQuote),
+    path('deleteComment/<int:pk>/', views.deleteComment),
     # path('allComments/<str:id>/', views.get_all_postedComments)
 ]
